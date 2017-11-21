@@ -9,6 +9,10 @@ var NetworkSpeed = function(url, fileSize) {
 };
 
 NetworkSpeed.prototype.checkDownloadSpeed = function(callback) {
+  function createSpeedData(bps, kbps, mbps) {
+    var speedData = {bps: bps, kbps: kbps, mbps: mbps};
+    return speedData;
+  }
   var startTime;
   http.get(baseUrl, function(response) {
     response.once('data', function(data) {
@@ -22,7 +26,8 @@ NetworkSpeed.prototype.checkDownloadSpeed = function(callback) {
       var speedBps = (bitsLoaded / duration).toFixed(2);
       var speedKbps = (speedBps / 1024).toFixed(2);
       var speedMbps = (speedKbps / 1024).toFixed(2);
-      callback(speedMbps);
+      var data = createSpeedData(speedBps, speedKbps, speedMbps);
+      callback(data);
     });
   });
 };
