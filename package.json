@@ -1,10 +1,10 @@
 {
   "name": "network-speed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node module to check internet connectivity speed",
   "main": "app.js",
   "engines": {
-    "node": "6.9.1"
+    "node": "9.2.0"
   },
   "scripts": {
     "start": "node test_usage.js",
@@ -27,7 +27,10 @@
   "homepage": "https://github.com/kenigbolo/network-speed#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "chai-http": "^3.0.0",
+    "http-browserify": "^1.7.0",
     "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "http-browserify": "^1.7.0"
   }
 }
