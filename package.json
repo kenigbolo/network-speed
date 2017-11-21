@@ -1,0 +1,24 @@
+{
+  "name": "network-speed",
+  "version": "1.0.0",
+  "description": "Node module to check internet connectivity speed",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenigbolo/network-speed.git"
+  },
+  "keywords": [
+    "internet-speed",
+    "network-speed",
+    "speed"
+  ],
+  "author": "Kenigbolo Meya Stephen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kenigbolo/network-speed/issues"
+  },
+  "homepage": "https://github.com/kenigbolo/network-speed#readme"
+}
