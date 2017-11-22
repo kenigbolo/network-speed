@@ -2,15 +2,15 @@
 
 [![Build Status](https://travis-ci.org/kenigbolo/network-speed.png)](https://travis-ci.org/kenigbolo/network-speed)
 
-##Getting Started
+## Getting Started
 
 + Clone the application with `git clone https://github.com/kenigbolo/network-speed.git` or use ssh  `git clone git@github.com:kenigbolo/network-speed.git`.
 
-##Dependencies
+## Dependencies
 
 * NPM 6.6
 
-##Description
+## Description
 Basic Javascript Application used to check upload and download speed. Contributions are welcome.
 
 ## NPM
