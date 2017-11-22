@@ -15,9 +15,12 @@
     "url": "git+https://github.com/kenigbolo/network-speed.git"
   },
   "keywords": [
-    "internet-speed",
-    "network-speed",
-    "speed"
+    "internet speed",
+    "network speed",
+    "speed",
+    "speedtest",
+    "internet",
+    "network"
   ],
   "author": "Kenigbolo Meya Stephen",
   "license": "MIT",
@@ -27,7 +30,6 @@
   "homepage": "https://github.com/kenigbolo/network-speed#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "http-browserify": "^1.7.0",
     "mocha": "^3.2.0"
   },
   "dependencies": {
