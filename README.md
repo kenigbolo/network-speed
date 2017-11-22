@@ -11,7 +11,7 @@
 * NPM 6.6
 
 ##Description
-Basic Javascript Application used to check upload and download speed. Currently offers calculation for download speed but will offer upload speed possibility soon. Contributions are welcome.
+Basic Javascript Application used to check upload and download speed. Contributions are welcome.
 
 ## NPM
 
@@ -50,5 +50,5 @@ async function getNetworkUploadSpeed() {
 
 ## StandAlone
 
-running `npm start` will trigger the test usage file to run and calculate your upload/download speed (download speed available at the moment)
+running `npm start` will trigger the test usage file to run and calculate your upload/download speed
 `See the test usage file`

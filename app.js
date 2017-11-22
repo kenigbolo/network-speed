@@ -25,7 +25,7 @@ NetworkSpeedCheck.prototype.checkDownloadSpeed = function(url, fileSize) {
       });
     });
   })
-  .catch((error) => {
+  .catch(function(error) {
     throw new Error (error);
   });
 };
@@ -54,7 +54,7 @@ NetworkSpeedCheck.prototype.checkUploadSpeed = function(options) {
     req.write(data);
     req.end();
   })
-  .catch((error) => {
+  .catch(function(error) {
     throw new Error (error);
   });
 };
