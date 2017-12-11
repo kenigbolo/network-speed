@@ -1,8 +1,8 @@
 {
   "name": "network-speed",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Node module to check internet connectivity speed",
-  "main": "bundle.js",
+  "main": "app.js",
   "engines": {
     "node": "9.2.0"
   },

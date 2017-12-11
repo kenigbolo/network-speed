@@ -1,11 +1,11 @@
-const NetworkSpeed = require('./app.js');
+const NetworkSpeed = require('./dist/module.js');
 var testNetworkSpeed = new NetworkSpeed();
 
 getNetworkDownloadSpeed();
 
 async function getNetworkDownloadSpeed() {
-  var baseUrl = 'http://www.kenrockwell.com/contax/images/g2/examples/31120037-5mb.jpg';
-  var fileSize = 4995374;
+  var baseUrl = 'http://eu.httpbin.org/stream-bytes/50000000';
+  var fileSize = 5000000;
   var speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSize);
   console.log(speed);
 }
