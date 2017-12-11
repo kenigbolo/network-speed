@@ -8,8 +8,8 @@ describe('Network Download Speed', () => {
     it('it should recieve a key value pair for bps, kbps and mbps', (done) => {
       getNetworkDownloadSpeed();
       async function getNetworkDownloadSpeed() {
-        var baseUrl = 'http://www.kenrockwell.com/contax/images/g2/examples/31120037-5mb.jpg';
-        var fileSize = 4995374;
+        var baseUrl = 'http://eu.httpbin.org/stream-bytes/50000000';
+        var fileSize = 500000;
         var speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSize);
         expect(speed).to.include.all.keys('bps', 'kbps', 'mbps');
       }
