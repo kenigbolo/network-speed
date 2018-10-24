@@ -1,5 +1,5 @@
-const NetworkSpeed = require('./dist/module.js');
-var testNetworkSpeed = new NetworkSpeed();
+const NetworkSpeed = require('./app.js');
+const testNetworkSpeed = new NetworkSpeed();
 
 getNetworkDownloadSpeed();
 
@@ -14,7 +14,7 @@ getNetworkUploadSpeed();
 
 async function getNetworkUploadSpeed() {
   var options = {
-    hostname: 'www.postcatcher.in',
+    hostname: 'www.google.com',
     port: 80,
     path: '/catchers/544b09b4599c1d0200000289',
     method: 'POST',
