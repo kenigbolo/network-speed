@@ -22,7 +22,7 @@ describe('Network Upload Speed', () => {
       getNetworkUploadSpeed();
       async function getNetworkUploadSpeed() {
         var options = {
-          hostname: 'www.postcatcher.in',
+          hostname: 'www.google.com',
           port: 80,
           path: '/catchers/544b09b4599c1d0200000289',
           method: 'POST',
