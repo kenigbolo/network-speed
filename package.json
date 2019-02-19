@@ -30,7 +30,7 @@
   "homepage": "https://github.com/kenigbolo/network-speed#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^6.0.0"
   },
   "dependencies": {
     "http-browserify": "^1.7.0"
