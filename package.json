@@ -6,6 +6,9 @@
   "engines": {
     "node": "9.2.0"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "webpack",
     "start": "node test_usage.js",
