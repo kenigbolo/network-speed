@@ -18,7 +18,7 @@ class NetworkSpeedCheck {
           const duration = (endTime - startTime) / 1000;
           const bitsLoaded = fileSize * 8;
           const bps = (bitsLoaded / duration).toFixed(2);
-          const kbps = (bps / 1024).toFixed(2);
+          const kbps = (bps / 1000).toFixed(2);
           const mbps = (kbps / 1024).toFixed(2);
           resolve({bps, kbps, mbps});
         });
