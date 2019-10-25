@@ -3,9 +3,6 @@
   "version": "2.0.2",
   "description": "Node/Browser module to check internet connectivity speed",
   "main": "app.js",
-  "engines": {
-    "node": "9.2.0"
-  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
