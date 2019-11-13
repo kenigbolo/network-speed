@@ -1,11 +1,8 @@
 {
   "name": "network-speed",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Node/Browser module to check internet connectivity speed",
   "main": "app.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "build": "webpack",
     "start": "node test_usage.js",

@@ -3,9 +3,14 @@ const chars =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+`-=[]{}|;':,./<>?";
 
 class NetworkSpeedCheck {
-  constructor() {}
-
-  checkDownloadSpeed(baseUrl, fileSize) {
+  /**
+   * Function to check download speed
+   * @param {String} baseUrl {Required} The url to which the request should be made
+   * @param {Number} fileSizeInBytes {Required} The size (in bytes) of the file to be downloaded
+   * @returns {Object}
+   */
+  checkDownloadSpeed(baseUrl, fileSizeInBytes) {
+    this.validateDownloadSpeedParams(baseUrl, fileSizeInBytes)
     let startTime;
     return new Promise((resolve, _) => {
       return http.get(baseUrl, response => {
@@ -16,11 +21,12 @@ class NetworkSpeedCheck {
         response.once('end', () => {
           const endTime = new Date().getTime();
           const duration = (endTime - startTime) / 1000;
-          const bitsLoaded = fileSize * 8;
+          // Convert bytes into bits by multiplying with 8
+          const bitsLoaded = fileSizeInBytes * 8;
           const bps = (bitsLoaded / duration).toFixed(2);
           const kbps = (bps / 1000).toFixed(2);
-          const mbps = (kbps / 1024).toFixed(2);
-          resolve({bps, kbps, mbps});
+          const mbps = (kbps / 1000).toFixed(2);
+          resolve({ bps, kbps, mbps });
         });
       });
     }).catch(error => {
@@ -29,6 +35,7 @@ class NetworkSpeedCheck {
   }
 
   checkUploadSpeed(options) {
+    const dataSizeInKb = 20;
     let startTime;
     const data = '{"data": "' + this.generateTestData(20) + '"}';
     return new Promise((resolve, _) => {
@@ -42,9 +49,9 @@ class NetworkSpeedCheck {
           const duration = (endTime - startTime) / 1000;
           const bitsLoaded = 20 * 8;
           const bps = (bitsLoaded / duration).toFixed(2);
-          const kbps = (bps / 1024).toFixed(2);
-          const mbps = (kbps / 1024).toFixed(2);
-          resolve({bps, kbps, mbps});
+          const kbps = (bps / 1000).toFixed(2);
+          const mbps = (kbps / 1000).toFixed(2);
+          resolve({ bps, kbps, mbps });
         });
       });
       req.write(data);
@@ -54,8 +61,18 @@ class NetworkSpeedCheck {
     });
   }
 
+  validateDownloadSpeedParams(baseUrl, fileSizeInBytes) {
+    if (typeof baseUrl !== 'string') {
+      throw new Error('baseUrl must be a string')
+    }
+    if (typeof fileSizeInBytes !== 'number') {
+      throw new Error('fileSizeInBytes must be a number')
+    }
+    return
+  }
+
   generateTestData(sizeInKmb) {
-    const iterations = sizeInKmb * 1024; //get byte count
+    const iterations = sizeInKmb * 1000; //get byte count
     let result = '';
     for (var index = 0; index < iterations; index++) {
       result += chars.charAt(Math.floor(Math.random() * chars.length));

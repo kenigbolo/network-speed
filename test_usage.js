@@ -2,9 +2,9 @@ const NetworkSpeed = require('./app.js');
 const testNetworkSpeed = new NetworkSpeed();
 
 async function getNetworkDownloadSpeed() {
-  const baseUrl = 'http://eu.httpbin.org/stream-bytes/50000000';
-  const fileSize = 500000;
-  const speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSize);
+  const baseUrl = 'http://eu.httpbin.org/stream-bytes/500000';
+  const fileSizeInBytes = 500000;
+  const speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
   console.log(`Download Speed: ${JSON.stringify(speed)}`);
 }
 
