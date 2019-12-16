@@ -36,7 +36,7 @@ class NetworkSpeedCheck {
 
   checkUploadSpeed(options, fileSizeInBytes = 2000000) {
     let startTime;
-    const data = '{"data": "' + this.generateTestData(fileSizeInBytes / 1000) + '"}';
+    const data = "{"data": "' + this.generateTestData(fileSizeInBytes / 1000) + '"}";
     return new Promise((resolve, _) => {
       var req = http.request(options, res => {
         res.setEncoding("utf8");
