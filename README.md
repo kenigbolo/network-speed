@@ -45,6 +45,7 @@ The checkDownloadSpeed accepts two arguments:
 The checkUploadSpeed sends a randomly generated `20 kilobytes` data stream to a given server endpoint and uses that to calculate the speed. It accepts only one argument in the form of a JavaScipt object
 
 1. The `options` argument - This refers to the needed arguments in making a http request in node. The signature is as follows
+2. The `fileSizeInBytes` - This refers to the size of the file to be uploaded. The file size is required to be of type `Number` and should always be in `Bytes`.
 
 ```
 const options = {
@@ -63,7 +64,7 @@ const options = {
 };
 ```
 
-> PS - For optimal results please use your own predefined endpoints for checking if possible
+> PS - For optimal results please use your own predefined endpoints defined on your sever for checking the speed as the servers used in this project are simply test servers and could be taken down anytime.
 
 ## Usage
 
@@ -75,8 +76,8 @@ getNetworkDownloadSpeed();
 
 async function getNetworkDownloadSpeed() {
   const baseUrl = 'http://eu.httpbin.org/stream-bytes/50000000';
-  const fileSize = 50000000;
-  const speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSize);
+  const fileSizeInBytes = 50000000;
+  const speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
   console.log(speed);
 }
 
@@ -92,7 +93,8 @@ async function getNetworkUploadSpeed() {
       'Content-Type': 'application/json',
     },
   };
-  const speed = await testNetworkSpeed.checkUploadSpeed(options);
+  const fileSizeInBytes = 2000000
+  const speed = await testNetworkSpeed.checkUploadSpeed(options, fileSizeInBytes);
   console.log(speed);
 }
 ```
@@ -100,4 +102,4 @@ async function getNetworkUploadSpeed() {
 ## StandAlone
 
 running `npm start` will trigger the test usage file to run and calculate your
-upload/download speed `See the test usage file`
+upload/download speed using some test servers `See the test usage file`

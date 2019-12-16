@@ -1,7 +1,7 @@
 {
   "name": "network-speed",
-  "version": "2.0.4",
-  "description": "Node/Browser module to check internet connectivity speed",
+  "version": "2.0.5",
+  "description": "Node JavaScript module to check internet connectivity speed",
   "main": "app.js",
   "scripts": {
     "build": "webpack",
@@ -29,7 +29,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.0.0",
-    "webpack": "^4.30.0",
+    "serialize-javascript": ">=2.1.1",
+    "webpack": "^4.41.3",
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {}
