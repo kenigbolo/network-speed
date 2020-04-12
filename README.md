@@ -69,7 +69,8 @@ const options = {
 ## Usage
 
 ```javascript
-const NetworkSpeed = require('network-speed');
+import NetworkSpeed = require('network-speed'); // ES6
+const NetworkSpeed = require('network-speed');  // ES5
 const testNetworkSpeed = new NetworkSpeed();
 
 getNetworkDownloadSpeed();
