@@ -1,4 +1,7 @@
 const http = require('http');
+const https = require('https');
+const URL = require('url').URL;
+
 const chars =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+`-=[]{}|;':,./<>?";
 
@@ -9,11 +12,17 @@ class NetworkSpeedCheck {
    * @param {Number} fileSizeInBytes {Required} The size (in bytes) of the file to be downloaded
    * @returns {Object}
    */
+
+  _protocol (url) {
+    var u = new URL(url)
+    return u.protocol === 'http:' ? http : https
+  }
   checkDownloadSpeed(baseUrl, fileSizeInBytes) {
     this.validateDownloadSpeedParams(baseUrl, fileSizeInBytes)
     let startTime;
+    let protocol = this._protocol(baseUrl)
     return new Promise((resolve, _) => {
-      return http.get(baseUrl, response => {
+      return protocol.get(baseUrl, response => {
         response.once('data', () => {
           startTime = new Date().getTime();
         });
