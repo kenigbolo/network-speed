@@ -47,8 +47,8 @@ class NetworkSpeedCheck {
     let startTime;
     const defaultData = this.generateTestData(fileSizeInBytes / 1000);
     const data = JSON.stringify({ defaultData });
-    return new Promise((resolve, _) => {
-      var req = http.request(options, res => {
+    return new Promise((resolve, reject) => {
+      let req = http.request(options, res => {
         res.setEncoding("utf8");
         res.on('data', () => {});
         res.on("end", () => {
@@ -63,13 +63,11 @@ class NetworkSpeedCheck {
       });
       startTime = new Date().getTime();
       req.on('error', error => {
-        console.error(error);
+        reject(error)
       });
       req.write(data)
       req.end()
-    }).catch(error => {
-      console.log(error);
-    });
+    })
   }
 
   validateDownloadSpeedParams(baseUrl, fileSizeInBytes) {
