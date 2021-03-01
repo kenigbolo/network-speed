@@ -1,6 +1,12 @@
 const http = require('http');
 const https = require('https');
-const URL = require('url').URL;
+let { URL, Url } = require('url');
+/**
+ * Use the default Node URL Class if found i.e. Inside a Node environment
+ * to allow http and https, otherwise use the Url consturctor for browser environments
+ * strictly limited to https for secure connections
+ */
+URL = URL ? URL : Url;
 
 const chars =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+`-=[]{}|;':,./<>?";

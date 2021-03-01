@@ -64,7 +64,7 @@ const options = {
 };
 ```
 
-> PS - For optimal results please use your own predefined endpoints defined on your sever for checking the speed as the servers used in this project are simply test servers and could be taken down anytime.
+> PS - For optimal results please use your own predefined endpoints defined on your sever for checking the speed as the servers used in this project are simply test servers and could be taken down anytime. Always use the https protocol
 
 ## Usage
 
@@ -76,8 +76,8 @@ const testNetworkSpeed = new NetworkSpeed();
 getNetworkDownloadSpeed();
 
 async function getNetworkDownloadSpeed() {
-  const baseUrl = 'http://eu.httpbin.org/stream-bytes/50000000';
-  const fileSizeInBytes = 50000000;
+  const baseUrl = 'https://eu.httpbin.org/stream-bytes/500000';
+  const fileSizeInBytes = 500000;
   const speed = await testNetworkSpeed.checkDownloadSpeed(baseUrl, fileSizeInBytes);
   console.log(speed);
 }

@@ -1,6 +1,6 @@
 {
   "name": "network-speed",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Node JavaScript module to check internet connectivity speed",
   "main": "app.js",
   "scripts": {
