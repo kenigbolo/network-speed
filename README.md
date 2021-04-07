@@ -69,7 +69,7 @@ const options = {
 ## Usage
 
 ```javascript
-import NetworkSpeed = require('network-speed'); // ES6
+import NetworkSpeed from 'network-speed'; // ES6
 const NetworkSpeed = require('network-speed');  // ES5
 const testNetworkSpeed = new NetworkSpeed();
 
