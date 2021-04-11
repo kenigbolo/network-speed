@@ -35,8 +35,10 @@ The library exposes two functions
 
 The checkDownloadSpeed accepts two arguments:
 
-1. The `baseUrl` - This refers to the url where the file is to be dowloaded from. This field is required to be of type `String`
-2. The `fileSizeInBytes` - This refers to the size of the file to be downloaded. The file size is required to be of type `Number` and should always be in `Bytes`.
+1. The `baseUrl` - This refers to the url where the file is to be downloaded from. This field is required to be of type `String`
+2. The `fileSizeInBytes` - This refers to the size of the file to be 
+
+nloaded. The file size is required to be of type `Number` and should always be in `Bytes`.
 
 > The return value is an object which contains the download speed representation in `bits/second(bps)`, `kolibits/second(kbs)` and `megabits/second (mbs)`.
 
